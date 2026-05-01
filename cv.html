@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | أحمد أحمد محمد هيكل</title>
+    <!-- استيراد الخطوط والأيقونات من روابط موثوقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0d1b2a; /* أزرق داكن */
+            --gold: #c5a059;    /* ذهبي */
+            --white: #ffffff;
+            --light-bg: #f4f7f6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* الهيدر والصورة */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1b263b 100%);
+            color: var(--white);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.5s;
+        }
+
+        .profile-img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        .tagline { color: var(--gold); font-size: 1.1rem; font-weight: bold; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        /* الأقسام */
+        section {
+            background: var(--white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            opacity: 0; /* للأنيميشن */
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            border-right: 5px solid var(--gold);
+            padding-right: 15px;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* شبكة المعلومات الشخصية */
+        .personal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            border-bottom: 2px solid #eee;
+            transition: 0.3s;
+        }
+
+        .info-item:hover { background: #fffcf5; border-bottom-color: var(--gold); }
+        .info-item i { color: var(--gold); margin-left: 10px; }
+
+        /* التايم لاين */
+        .timeline {
+            border-right: 3px solid var(--gold);
+            padding-right: 20px;
+            margin-right: 10px;
+        }
+
+        .timeline-box {
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline-box::before {
+            content: '';
+            position: absolute;
+            right: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* المهارات */
+        .skill-bar { margin-bottom: 20px; }
+        .skill-name { display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: bold; }
+        .progress-bg { background: #eee; height: 12px; border-radius: 10px; overflow: hidden; }
+        .progress-fill { 
+            background: linear-gradient(to left, var(--primary), var(--gold)); 
+            height: 100%; 
+            width: 0; 
+            transition: width 2s ease-in-out; 
+        }
+
+        /* البرامج */
+        .apps-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .app-card {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .app-card:hover { background: var(--gold); transform: scale(1.1); }
+
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            header { padding: 40px 10px; }
+            .profile-img { width: 140px; height: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="profile-wrapper">
+            <img src="11.jpg" alt="أحمد هيكل" class="profile-img">
+        </div>
+        <h1>أحمد أحمد محمد هيكل</h1>
+        <p class="tagline">مدرس رياضيات خبير | مهارات تعليم رقمي متطورة</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="reveal">
+            <h2><i class="fas fa-user-circle"></i> البيانات الشخصية</h2>
+            <div class="personal-info-grid">
+                <div class="info-item"><i class="fas fa-calendar"></i> 1 / 9 / 1982</div>
+                <div class="info-item"><i class="fas fa-ring"></i> متزوج</div>
+                <div class="info-item"><i class="fas fa-passport"></i> مصري</div>
+                <div class="info-item"><i class="fas fa-mobile-alt"></i> 01008186220</div>
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i> السنبلاوين - الدقهلية</div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2><i class="fas fa-graduation-cap"></i> المؤهل العلمي</h2>
+            <p>حاصل على <strong>ليسانس الحقوق</strong></p>
+        </section>
+
+        <section class="reveal">
+            <h2><i class="fas fa-briefcase"></i> الخبرات العملية</h2>
+            <div class="timeline">
+                <div class="timeline-box">
+                    <h3>مدرس رياضيات حر</h3>
+                    <p>أكثر من 10 سنوات من الخبرة في تدريس الرياضيات لجميع المراحل التعليمية (ابتدائي - إعدادي - ثانوي).</p>
+                </div>
+                <div class="timeline-box">
+                    <h3>خبير تعليم رقمي</h3>
+                    <p>متخصص في تقديم دروس "أونلاين" تفاعلية وحضورية بأساليب حديثة.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2><i class="fas fa-chart-line"></i> المهارات</h2>
+            <div class="skill-bar">
+                <div class="skill-name"><span>تبسيط مادة الرياضيات</span> <span>98%</span></div>
+                <div class="progress-bg"><div class="progress-fill" data-done="98%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name"><span>استخدام الذكاء الاصطناعي في التعليم</span> <span>90%</span></div>
+                <div class="progress-bg"><div class="progress-fill" data-done="90%"></div></div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-name"><span>تحفيز الطلاب وتحسين الأداء الأكاديمي</span> <span>95%</span></div>
+                <div class="progress-bg"><div class="progress-fill" data-done="95%"></div></div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2><i class="fas fa-laptop"></i> البرامج والتقنيات</h2>
+            <div class="apps-grid">
+                <div class="app-card"><i class="fas fa-video"></i> Zoom / Teams</div>
+                <div class="app-card"><i class="fas fa-robot"></i> AI Education Tools</div>
+                <div class="app-card"><i class="fas fa-file-powerpoint"></i> MS Office</div>
+                <div class="app-card"><i class="fas fa-pen-nib"></i> Digital Whiteboard</div>
+            </div>
+        </section>
+
+        <section class="reveal">
+            <h2><i class="fas fa-language"></i> اللغات</h2>
+            <p><strong>العربية:</strong> اللغة الأم</p>
+            <p><strong>الإنجليزية:</strong> مهارات جيدة جداً</p>
+        </section>
+
+    </div>
+
+    <footer>
+        &copy; 2024 جميع الحقوق محفوظة - أ/ أحمد هيكل
+    </footer>
+
+    <script>
+        // أنيميشن التمرير (Scroll Animation)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // تشغيل أشرطة المهارات
+                    const bars = entry.target.querySelectorAll('.progress-fill');
+                    bars.forEach(bar => {
+                        bar.style.width = bar.getAttribute('data-done');
+                    });
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
